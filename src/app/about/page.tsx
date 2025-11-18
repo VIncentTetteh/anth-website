@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export const metadata = {
   title: "About The ANTH",
   description:
@@ -16,6 +18,15 @@ export default function AboutPage() {
           <h1 className="section-title text-balance text-slate-50">
             Ananse Ntentan – a modern network spun from ancestral wisdom.
           </h1>
+          <div className="mt-5 overflow-hidden rounded-2xl border border-slate-800/70 bg-slate-900/70">
+            <Image
+              src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80"
+              alt="Stylised web pattern inspired by Ananse folklore, representing resilient interconnected systems."
+              width={1200}
+              height={420}
+              className="h-40 w-full object-cover opacity-95"
+            />
+          </div>
           <div className="mt-5 grid gap-8 text-sm text-slate-300/95 lg:grid-cols-[1.2fr_1fr]">
             <div className="space-y-4">
               <p>

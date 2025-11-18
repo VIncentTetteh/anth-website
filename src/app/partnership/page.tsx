@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export const metadata = {
   title: "Partnership & Banking Solutions",
   description:
@@ -34,7 +36,16 @@ export default function PartnershipPage() {
           <h1 className="section-title text-balance text-slate-50">
             Banking, fintech, and enterprise solutions built in partnership.
           </h1>
-          <p className="section-body text-sm text-slate-300/95">
+          <div className="mt-5 overflow-hidden rounded-2xl border border-slate-800/70 bg-slate-900/70">
+            <Image
+              src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80"
+              alt="Banking and fintech teams collaborating around architecture diagrams and platforms."
+              width={1200}
+              height={420}
+              className="h-40 w-full object-cover opacity-95"
+            />
+          </div>
+          <p className="section-body mt-5 text-sm text-slate-300/95">
             The ANTH works best as a long-term partner—not a one-off vendor. We design
             integration patterns, operating models, and governance that keep joint delivery
             on track.

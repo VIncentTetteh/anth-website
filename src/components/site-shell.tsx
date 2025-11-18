@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, useState } from "react";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -16,6 +16,7 @@ const navItems = [
 
 export function SiteShell({ children }: PropsWithChildren) {
   const pathname = usePathname();
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
   return (
     <div className="page-shell text-sm text-slate-200">
@@ -35,6 +36,7 @@ export function SiteShell({ children }: PropsWithChildren) {
             </div>
           </Link>
 
+          {/* Desktop navigation */}
           <div className="hidden items-center gap-1 rounded-full border border-slate-800/80 bg-slate-950/60 px-1.5 py-1 text-[11px] lg:flex">
             {navItems.map((item) => {
               const isActive =
@@ -56,7 +58,69 @@ export function SiteShell({ children }: PropsWithChildren) {
               );
             })}
           </div>
+
+          {/* Mobile hamburger */}
+          <button
+            type="button"
+            className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-800/70 bg-slate-950/80 text-slate-100 shadow-sm lg:hidden"
+            aria-label="Toggle navigation menu"
+            aria-expanded={isMobileNavOpen}
+            onClick={() => setIsMobileNavOpen((open) => !open)}
+          >
+            <span className="sr-only">{isMobileNavOpen ? "Close navigation" : "Open navigation"}</span>
+            <span className="flex flex-col gap-1.5">
+              <span
+                className={
+                  "block h-0.5 w-4 rounded-full bg-slate-200 transition-transform " +
+                  (isMobileNavOpen ? "translate-y-[5px] rotate-45" : "")
+                }
+              />
+              <span
+                className={
+                  "block h-0.5 w-4 rounded-full bg-slate-200 transition-opacity " +
+                  (isMobileNavOpen ? "opacity-0" : "opacity-100")
+                }
+              />
+              <span
+                className={
+                  "block h-0.5 w-4 rounded-full bg-slate-200 transition-transform " +
+                  (isMobileNavOpen ? "-translate-y-[5px] -rotate-45" : "")
+                }
+              />
+            </span>
+          </button>
         </nav>
+
+        {isMobileNavOpen && (
+          <div className="border-t border-slate-800/70 bg-slate-950/95 lg:hidden">
+            <div className="content-shell py-3">
+              <nav className="flex flex-col gap-1 text-sm">
+                {navItems.map((item) => {
+                  const isActive =
+                    item.href === "/"
+                      ? pathname === "/"
+                      : pathname.startsWith(item.href);
+
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className={
+                        "rounded-lg px-3 py-2 transition-colors " +
+                        (isActive
+                          ? "bg-amber-400 text-slate-950 shadow-[0_0_20px_rgba(251,191,36,0.5)]"
+                          : "text-slate-100 hover:bg-slate-800/80")
+                      }
+                      onClick={() => setIsMobileNavOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  );
+                })}
+              </nav>
+            </div>
+          </div>
+        )}
       </header>
 
       <main className="content-shell pb-10 pt-6 lg:pt-10">{children}</main>

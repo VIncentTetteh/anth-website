@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export const metadata = {
   title: "Contact Us",
   description:
@@ -20,6 +22,16 @@ export default function ContactPage() {
               ambitions. We’ll follow up with clarifying questions and a proposal for how The
               ANTH can help.
             </p>
+          </div>
+
+          <div className="mt-6 overflow-hidden rounded-2xl border border-slate-800/70 bg-slate-900/70">
+            <Image
+              src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80"
+              alt="Accra city skyline at dusk, representing The ANTH's Ghana base and regional reach."
+              width={900}
+              height={420}
+              className="h-40 w-full object-cover opacity-95"
+            />
           </div>
 
           <div className="space-y-4 text-xs text-slate-300/95">

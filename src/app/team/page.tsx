@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export const metadata = {
   title: "Our Team",
   description:
@@ -49,7 +51,16 @@ export default function TeamPage() {
           <h1 className="section-title text-balance text-slate-50">
             Small, senior squads with clear lines of accountability.
           </h1>
-          <p className="section-body text-sm text-slate-300/95">
+          <div className="mt-5 overflow-hidden rounded-2xl border border-slate-800/70 bg-slate-900/70">
+            <Image
+              src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1200&q=80"
+              alt="Multi-disciplinary engineering squads collaborating over diagrams and dashboards."
+              width={1200}
+              height={420}
+              className="h-40 w-full object-cover opacity-95"
+            />
+          </div>
+          <p className="section-body mt-5 text-sm text-slate-300/95">
             The ANTH teams are intentionally compact, multi-disciplinary, and designed for
             regulated environments. We prioritise engineers and leaders who can work
             comfortably with both code and committees.

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export const metadata = {
   title: "Capabilities & Services",
   description:
@@ -37,7 +39,16 @@ export default function CapabilitiesPage() {
           <h1 className="section-title text-balance text-slate-50">
             Bank-grade engineering, full-stack execution, and governed delivery.
           </h1>
-          <p className="section-body text-sm text-slate-300/95">
+          <div className="mt-5 overflow-hidden rounded-2xl border border-slate-800/70 bg-slate-900/70">
+            <Image
+              src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1200&q=80"
+              alt="Diagram of payment rails, APIs, and cloud infrastructure representing The ANTH's capabilities."
+              width={1200}
+              height={420}
+              className="h-40 w-full object-cover opacity-95"
+            />
+          </div>
+          <p className="section-body mt-5 text-sm text-slate-300/95">
             The ANTH focuses on a small set of capabilities executed deeply. Our work spans
             national payment schemes, enterprise platforms, and the governance required to
             run them safely.

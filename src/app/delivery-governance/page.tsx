@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export const metadata = {
   title: "Delivery & Governance",
   description:
@@ -49,7 +51,16 @@ export default function DeliveryGovernancePage() {
           <h1 className="section-title text-balance text-slate-50">
             Joint governance that connects steering decisions to squad delivery.
           </h1>
-          <p className="section-body text-sm text-slate-300/95">
+          <div className="mt-5 overflow-hidden rounded-2xl border border-slate-800/70 bg-slate-900/70">
+            <Image
+              src="https://images.unsplash.com/photo-1517148815978-75f6acaaf32c?auto=format&fit=crop&w=1200&q=80"
+              alt="Diagram of steering committee, squads, environments, and reporting streams forming a governance loop."
+              width={1200}
+              height={420}
+              className="h-40 w-full object-cover opacity-95"
+            />
+          </div>
+          <p className="section-body mt-5 text-sm text-slate-300/95">
             The ANTH operates as a transparent partner. Governance is not paperwork at the
             end—it is woven into how we plan, deliver, and operate every platform.
           </p>

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
     <div className="space-y-10 lg:space-y-14">
@@ -44,6 +46,16 @@ export default function Home() {
           </div>
 
           <div className="relative flex flex-col gap-3 rounded-3xl border border-slate-700/60 bg-slate-900/80 p-4 text-xs shadow-[0_0_80px_rgba(15,23,42,1)]">
+            <div className="relative mb-2 overflow-hidden rounded-2xl border border-slate-700/70 bg-slate-900/80">
+              <Image
+                src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&q=80"
+                alt="Abstract control room visual with interconnected banking systems and observability dashboards."
+                width={640}
+                height={360}
+                className="h-40 w-full object-cover opacity-90"
+                priority
+              />
+            </div>
             <div className="flex items-center justify-between">
               <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-slate-300/80">
                 Engineering control room
