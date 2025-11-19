@@ -1,90 +1,10 @@
-import Image from "next/image";
+import { HomeHero } from "@/components/home-hero";
 
 export default function Home() {
   return (
-    <div className="space-y-10 lg:space-y-14">
-      {/* Hero */}
-      <section className="section-card section-appear overflow-hidden">
-        <div className="web-orbit">
-          <div className="web-node-ring" />
-          <div className="web-node-ring" />
-          <div className="web-node-ring" />
-          <div className="web-node-ring" />
-        </div>
-        <div className="section-inner relative z-10 grid gap-10 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)] lg:items-center">
-          <div>
-            <div className="section-kicker">
-              <span className="section-kicker-dot" />
-              <span>Delivering engineering innovation across a connected world</span>
-            </div>
-            <h1 className="section-title mt-2 text-balance text-slate-50">
-              Afro-futurist engineering for bank-grade, always-on systems.
-            </h1>
-            <p className="section-body text-sm leading-relaxed text-slate-300/95 sm:text-base">
-              The ANTH (Ananse Ntentan Technology Hub) is a specialist engineering partner
-              crafting resilient payment networks, secure platforms, and governed delivery
-              models for banks, fintechs, and enterprises across Africa and beyond.
-            </p>
-            <div className="mt-6 flex flex-wrap items-center gap-3 text-xs sm:text-sm">
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 rounded-full bg-amber-400 px-5 py-2.5 font-medium text-slate-950 shadow-[0_0_40px_rgba(251,191,36,0.7)] transition hover:bg-amber-300"
-              >
-                Engage the ANTH
-                <span aria-hidden>↗</span>
-              </a>
-              <a
-                href="#capabilities"
-                className="inline-flex items-center gap-2 rounded-full border border-slate-600/60 bg-slate-900/80 px-4 py-2 text-slate-100 transition hover:border-amber-300/70 hover:text-amber-100"
-              >
-                Explore capabilities
-              </a>
-              <span className="text-[11px] text-slate-400/95">
-                Bank-grade payments · Full-stack delivery · Enterprise governance
-              </span>
-            </div>
-          </div>
-
-          <div className="relative flex flex-col gap-3 rounded-3xl border border-slate-700/60 bg-slate-900/80 p-4 text-xs shadow-[0_0_80px_rgba(15,23,42,1)]">
-            <div className="relative mb-2 overflow-hidden rounded-2xl border border-slate-700/70 bg-slate-900/80">
-              <Image
-                src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&q=80"
-                alt="Abstract control room visual with interconnected banking systems and observability dashboards."
-                width={640}
-                height={360}
-                className="h-40 w-full object-cover opacity-90"
-                priority
-              />
-            </div>
-            <div className="flex items-center justify-between">
-              <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-slate-300/80">
-                Engineering control room
-              </p>
-              <span className="rounded-full border border-amber-300/40 bg-amber-400/10 px-2 py-0.5 text-[10px] text-amber-100">
-                Always observing
-              </span>
-            </div>
-            <dl className="mt-3 grid grid-cols-2 gap-3 text-[11px] text-slate-300/90">
-              <div className="space-y-1">
-                <dt className="text-slate-400/80">Core focus</dt>
-                <dd className="font-medium text-slate-100">Bank-grade platforms</dd>
-              </div>
-              <div className="space-y-1">
-                <dt className="text-slate-400/80">Coverage</dt>
-                <dd className="font-medium text-slate-100">Ghana · Pan-African</dd>
-              </div>
-              <div className="space-y-1">
-                <dt className="text-slate-400/80">Interfaces</dt>
-                <dd>GIP · ACH · Ghana.gov · Mobile money · Switches</dd>
-              </div>
-              <div className="space-y-1">
-                <dt className="text-slate-400/80">Assurance</dt>
-                <dd>Security, observability, and joint governance built-in.</dd>
-              </div>
-            </dl>
-          </div>
-        </div>
-      </section>
+    <div className="space-y-16 lg:space-y-20">
+      {/* Hero with parallax */}
+      <HomeHero />
 
       {/* Mission & philosophy */}
       <section className="section-card section-appear-delayed" id="about">
@@ -140,20 +60,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Capabilities preview */}
+      {/* Capabilities & services */}
       <section className="section-card" id="capabilities">
         <div className="section-inner">
           <div className="section-kicker">
             <span className="section-kicker-dot" />
-            <span>Core capabilities</span>
+            <span>What we do</span>
           </div>
           <h2 className="section-title text-slate-50">
-            Bank-grade engineering across the full stack.
+            Bank-grade engineering and consulting for modern institutions.
           </h2>
+          <p className="section-body text-sm text-slate-300/95">
+            The ANTH partners with banks, fintechs, public-sector programmes, and scale-ups to
+            design, build, and operate critical platforms—with a broad bench of senior
+            architects, engineers, and delivery leaders.
+          </p>
+
           <div className="section-grid section-grid-2">
             <div className="card-ambient">
-              <p className="card-kicker">Bank-grade platforms</p>
-              <h3 className="card-title">Payments, switching, and settlement.</h3>
+              <p className="card-kicker">Platform engineering</p>
+              <h3 className="card-title">Payments, switching, and settlement rails.</h3>
               <p className="card-body">
                 Architected for national-scale load and regulatory resilience—GIP, ACH,
                 Ghana.gov, mobile money, and custom switch integrations.
@@ -165,18 +91,89 @@ export default function Home() {
                 <span className="chip">Card & account rails</span>
               </div>
             </div>
+
             <div className="card-ambient">
-              <p className="card-kicker">Full-stack execution</p>
-              <h3 className="card-title">Backend, frontend, and DevOps as one fabric.</h3>
+              <p className="card-kicker">Cloud & DevOps</p>
+              <h3 className="card-title">Production-ready delivery pipelines.</h3>
               <p className="card-body">
-                From protocol adapters and APIs to responsive experiences and pipelines—we
-                deliver the full surface area required for modern digital banking.
+                From containerised workloads and infrastructure-as-code to observability and
+                SRE practices, we ensure critical systems stay healthy and auditable.
               </p>
               <div className="chip-row">
-                <span className="chip">Cloud & on-prem</span>
-                <span className="chip">API platforms</span>
-                <span className="chip">CI/CD & SRE</span>
-                <span className="chip">Design systems</span>
+                <span className="chip">CI/CD design</span>
+                <span className="chip">SRE & observability</span>
+                <span className="chip">Cloud & on‑prem</span>
+                <span className="chip">Runbooks & playbooks</span>
+              </div>
+            </div>
+
+            <div className="card-ambient">
+              <p className="card-kicker">Advisory & architecture</p>
+              <h3 className="card-title">Board-level technology guidance.</h3>
+              <p className="card-body">
+                We work with executive teams and boards to shape technology roadmaps, operating
+                models, and governance that match regulatory expectations.
+              </p>
+              <div className="chip-row">
+                <span className="chip">Architecture boards</span>
+                <span className="chip">Technology strategy</span>
+                <span className="chip">Risk & controls</span>
+              </div>
+            </div>
+
+            <div className="card-ambient">
+              <p className="card-kicker">Delivery & talent</p>
+              <h3 className="card-title">Broad, embedded squads of experts.</h3>
+              <p className="card-body">
+                Cross-functional squads of engineers, designers, analysts, and delivery leads
+                embed with your teams to ship meaningful change without chaos.
+              </p>
+              <div className="chip-row">
+                <span className="chip">Embedded squads</span>
+                <span className="chip">Delivery leadership</span>
+                <span className="chip">Capability build-out</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Talent & leadership */}
+      <section className="section-card" id="talent">
+        <div className="section-inner">
+          <div className="section-kicker">
+            <span className="section-kicker-dot" />
+            <span>Talent network</span>
+          </div>
+          <h2 className="section-title text-slate-50">
+            A broad bench of senior, board-facing talent.
+          </h2>
+          <div className="section-grid section-grid-2">
+            <div className="card-ambient">
+              <p className="card-kicker">Leadership & governance</p>
+              <h3 className="card-title">People who speak both code and boardroom.</h3>
+              <p className="card-body">
+                Our partners and principals have led banking transformations, payments
+                programmes, and regulatory engagements across Africa and beyond.
+              </p>
+              <div className="chip-row">
+                <span className="chip">CTO & CIO advisors</span>
+                <span className="chip">Regulator engagement</span>
+                <span className="chip">Steering committees</span>
+              </div>
+            </div>
+
+            <div className="card-ambient">
+              <p className="card-kicker">Specialist guilds</p>
+              <h3 className="card-title">Deep engineering and design capability.</h3>
+              <p className="card-body">
+                Guilds of backend, frontend, data, and UX specialists maintain standards and
+                accelerate delivery across all ANTH engagements.
+              </p>
+              <div className="chip-row">
+                <span className="chip">Backend & API engineers</span>
+                <span className="chip">SRE & DevOps</span>
+                <span className="chip">Product & UX</span>
               </div>
             </div>
           </div>
