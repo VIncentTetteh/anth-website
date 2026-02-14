@@ -1,9 +1,46 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
+const rateLimitMap = new Map<string, { count: number; lastReset: number }>();
+
+function isRateLimited(ip: string) {
+    const now = Date.now();
+    const windowMs = 60 * 1000; // 1 minute
+    const limit = 3;
+
+    const record = rateLimitMap.get(ip) || { count: 0, lastReset: now };
+
+    if (now - record.lastReset > windowMs) {
+        record.count = 0;
+        record.lastReset = now;
+    }
+
+    if (record.count >= limit) {
+        return true;
+    }
+
+    record.count++;
+    rateLimitMap.set(ip, record);
+    return false;
+}
+
 export async function POST(request: Request) {
     try {
-        const { name, organization, email, region, message } = await request.json();
+        const ip = request.headers.get('x-forwarded-for')?.split(',')[0] || 'unknown';
+
+        if (isRateLimited(ip)) {
+            return NextResponse.json(
+                { error: 'Too many requests. Please try again later.' },
+                { status: 429 }
+            );
+        }
+        const { name, organization, email, region, message, _honey } = await request.json();
+
+        // Honeypot check for spam (silently fail)
+        if (_honey) {
+            console.log('Honeypot filled, rejecting spam submission.');
+            return NextResponse.json({ success: true, message: 'Email sent successfully!' });
+        }
 
         // Basic validation
         if (!name || !email || !message) {

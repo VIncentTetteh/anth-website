@@ -10,6 +10,7 @@ export default function ContactPage() {
     email: "",
     region: "",
     message: "",
+    _honey: "", // Honeypot field
   });
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
@@ -39,7 +40,7 @@ export default function ContactPage() {
       }
 
       setStatus("success");
-      setFormData({ name: "", organization: "", email: "", region: "", message: "" });
+      setFormData({ name: "", organization: "", email: "", region: "", message: "", _honey: "" });
     } catch (error: any) {
       setStatus("error");
       setErrorMessage(error.message);
@@ -152,6 +153,17 @@ export default function ContactPage() {
               />
             </div>
             <div className="sm:col-span-2">
+              {/* Honeypot field (hidden) */}
+              <input
+                type="text"
+                name="_honey"
+                value={formData._honey}
+                onChange={handleChange}
+                style={{ display: "none" }}
+                tabIndex={-1}
+                autoComplete="off"
+              />
+
               <label className="mb-1 block text-[11px] uppercase tracking-[0.16em] text-slate-400">
                 Context & objectives
               </label>
