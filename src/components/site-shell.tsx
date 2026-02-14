@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { PropsWithChildren, useState } from "react";
@@ -23,8 +24,15 @@ export function SiteShell({ children }: PropsWithChildren) {
       <header className="border-b border-slate-800/60 bg-slate-950/70 backdrop-blur-xl">
         <nav className="content-shell flex items-center justify-between py-4">
           <Link href="/" className="flex items-center gap-3">
-            <div className="relative flex h-9 w-9 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-300 via-amber-500 to-amber-700 shadow-[0_0_40px_rgba(248,250,252,0.45)]">
-              <span className="text-xs font-semibold text-slate-950">ANTH</span>
+            <div className="relative flex h-12 w-12 items-center justify-center filter drop-shadow-[0_0_8px_rgba(244,213,141,0.5)]">
+              <Image
+                src="/logo.png"
+                alt="The ANTH Logo"
+                width={48}
+                height={48}
+                className="object-contain"
+                priority
+              />
             </div>
             <div className="flex flex-col leading-tight">
               <span className="text-xs font-medium tracking-[0.24em] text-transparent bg-clip-text bg-gradient-to-r from-amber-200 to-amber-400 uppercase">
