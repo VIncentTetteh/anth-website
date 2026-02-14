@@ -2,10 +2,14 @@
 
 :root {
   /* The ANTH brand tokens */
-  --background: #020617; /* deep midnight blue */
-  --foreground: #e5e7eb; /* soft light gray */
-  --accent-gold: #f4d58d; /* warm gold */
-  --accent-gold-soft: #fef3c7; /* soft glow */
+  --background: #020617;
+  /* deep midnight blue */
+  --foreground: #e5e7eb;
+  /* soft light gray */
+  --accent-gold: #f4d58d;
+  /* warm gold */
+  --accent-gold-soft: #fef3c7;
+  /* soft glow */
   --muted: #64748b;
   --border-subtle: rgba(148, 163, 184, 0.35);
 }
@@ -62,21 +66,17 @@ body {
     radial-gradient(circle at 10% 15%, rgba(248, 250, 252, 0.10) 0, transparent 55%),
     radial-gradient(circle at 80% 20%, rgba(251, 191, 36, 0.14) 0, transparent 60%),
     /* concentric rings */
-    repeating-radial-gradient(
-      circle,
+    repeating-radial-gradient(circle,
       rgba(148, 163, 184, 0.28) 0,
       rgba(148, 163, 184, 0.28) 1px,
       transparent 1px,
-      transparent 18px
-    ),
+      transparent 18px),
     /* spokes */
-    repeating-conic-gradient(
-      from 0deg,
+    repeating-conic-gradient(from 0deg,
       rgba(148, 163, 184, 0.38) 0deg,
       rgba(148, 163, 184, 0.38) 1deg,
       transparent 1deg,
-      transparent 15deg
-    );
+      transparent 15deg);
   background-size:
     140% 140%,
     140% 140%,
@@ -92,11 +92,9 @@ body {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background-image: linear-gradient(
-      120deg,
+  background-image: linear-gradient(120deg,
       rgba(148, 163, 184, 0.06) 1px,
-      transparent 0
-    ),
+      transparent 0),
     linear-gradient(210deg, rgba(15, 23, 42, 0.95), transparent);
   background-size: 46px 46px, 100% 100%;
   mix-blend-mode: soft-light;
@@ -184,6 +182,8 @@ body {
   margin-top: 1rem;
   color: rgba(203, 213, 225, 0.92);
   max-width: 40rem;
+  font-size: 1.05rem;
+  line-height: 1.75;
 }
 
 .section-grid {
@@ -229,7 +229,7 @@ body {
 
 .card-body {
   margin-top: 0.35rem;
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   color: rgba(203, 213, 225, 0.9);
 }
 
@@ -354,12 +354,75 @@ body {
     opacity: 0.7;
     transform: scale(0.8);
   }
+
   70% {
     opacity: 0;
     transform: scale(1.6);
   }
+
   100% {
     opacity: 0;
     transform: scale(1.6);
+  }
+}
+
+/* Text Gradients & Animations */
+.text-gradient-gold {
+  background: linear-gradient(135deg, #fef3c7 0%, #f4d58d 50%, #d97706 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.text-gradient-gold-shimmer {
+  background: linear-gradient(to right, #fef3c7 20%, #fcd34d 40%, #fef3c7 60%, #fef3c7 80%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shine 4s linear infinite;
+  display: inline-block;
+}
+
+.text-gradient-cool {
+  background: linear-gradient(135deg, #e2e8f0 0%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.animate-fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

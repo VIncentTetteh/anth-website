@@ -19,7 +19,7 @@ export function SiteShell({ children }: PropsWithChildren) {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
   return (
-    <div className="page-shell text-sm text-slate-200">
+    <div className="page-shell text-[15px] text-slate-200">
       <header className="border-b border-slate-800/60 bg-slate-950/70 backdrop-blur-xl">
         <nav className="content-shell flex items-center justify-between py-4">
           <Link href="/" className="flex items-center gap-3">
@@ -27,7 +27,7 @@ export function SiteShell({ children }: PropsWithChildren) {
               <span className="text-xs font-semibold text-slate-950">ANTH</span>
             </div>
             <div className="flex flex-col leading-tight">
-              <span className="text-xs font-medium tracking-[0.24em] text-amber-200/90 uppercase">
+              <span className="text-xs font-medium tracking-[0.24em] text-transparent bg-clip-text bg-gradient-to-r from-amber-200 to-amber-400 uppercase">
                 The ANTH
               </span>
               <span className="text-sm font-semibold text-slate-50">
@@ -37,7 +37,7 @@ export function SiteShell({ children }: PropsWithChildren) {
           </Link>
 
           {/* Desktop navigation */}
-          <div className="hidden items-center gap-1 rounded-full border border-slate-800/80 bg-slate-950/60 px-1.5 py-1 text-[11px] lg:flex">
+          <div className="hidden items-center gap-1 rounded-full border border-slate-800/80 bg-slate-950/60 px-1.5 py-1 text-[13px] lg:flex">
             {navItems.map((item) => {
               const isActive =
                 item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
@@ -50,7 +50,7 @@ export function SiteShell({ children }: PropsWithChildren) {
                     "rounded-full px-3 py-1.5 transition-colors " +
                     (isActive
                       ? "bg-amber-400 text-slate-950 shadow-[0_0_28px_rgba(251,191,36,0.6)]"
-                      : "text-slate-200/80 hover:bg-slate-800/70")
+                      : "text-slate-300 hover:text-amber-200 hover:bg-slate-800/80")
                   }
                 >
                   {item.label}
@@ -126,7 +126,7 @@ export function SiteShell({ children }: PropsWithChildren) {
       <main className="content-shell pb-10 pt-6 lg:pt-10">{children}</main>
 
       <footer className="border-t border-slate-800/60 bg-slate-950/80">
-        <div className="content-shell flex flex-col justify-between gap-4 py-4 text-[11px] text-slate-400/80 sm:flex-row sm:items-center">
+        <div className="content-shell flex flex-col justify-between gap-4 py-4 text-[13px] text-slate-400/80 sm:flex-row sm:items-center">
           <p>
             © {new Date().getFullYear()} The ANTH (Ananse Ntentan Technology Hub). All
             rights reserved.

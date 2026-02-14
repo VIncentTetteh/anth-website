@@ -42,33 +42,36 @@ export function HomeHero() {
 
       <div className="section-inner relative z-10 grid gap-10 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)] lg:items-center">
         <div>
-          <div className="section-kicker">
+          <div className="section-kicker animate-fade-in-up">
             <span className="section-kicker-dot" />
-            <span>Delivering engineering innovation across a connected world</span>
+            <span className="bg-gradient-to-r from-slate-200 to-slate-400 bg-clip-text text-transparent">
+              Delivering engineering innovation across a connected world
+            </span>
           </div>
-          <h1 className="section-title mt-2 text-balance text-slate-50">
-            Afro-futurist engineering for bank-grade, always-on systems.
+          <h1 className="section-title mt-2 text-balance animate-fade-in-up delay-100">
+            <span className="text-gradient-gold-shimmer">Afro-futurist engineering</span>{" "}
+            <span className="text-slate-100">for bank-grade, always-on systems.</span>
           </h1>
-          <p className="section-body text-sm leading-relaxed text-slate-300/95 sm:text-base">
-            The ANTH (Ananse Ntentan Technology Hub) is a specialist engineering partner
+          <p className="section-body text-lg leading-relaxed text-slate-300/95 animate-fade-in-up delay-200">
+            The <span className="text-amber-100 font-medium">ANTH</span> (Ananse Ntentan Technology Hub) is a specialist engineering partner
             crafting resilient payment networks, secure platforms, and governed delivery
             models for banks, fintechs, and enterprises across Africa and beyond.
           </p>
-          <div className="mt-6 flex flex-wrap items-center gap-3 text-xs sm:text-sm">
+          <div className="mt-8 flex flex-wrap items-center gap-3 text-sm animate-fade-in-up delay-300">
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 rounded-full bg-amber-400 px-5 py-2.5 font-medium text-slate-950 shadow-[0_0_40px_rgba(251,191,36,0.7)] transition hover:bg-amber-300"
+              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-br from-amber-400 to-amber-500 px-5 py-2.5 font-medium text-slate-950 shadow-[0_0_40px_rgba(251,191,36,0.5)] transition hover:shadow-[0_0_60px_rgba(251,191,36,0.7)] hover:scale-105 duration-300"
             >
               Engage the ANTH
               <span aria-hidden>↗</span>
             </a>
             <a
               href="#capabilities"
-              className="inline-flex items-center gap-2 rounded-full border border-slate-600/60 bg-slate-900/80 px-4 py-2 text-slate-100 transition hover:border-amber-300/70 hover:text-amber-100"
+              className="inline-flex items-center gap-2 rounded-full border border-slate-600/60 bg-slate-900/80 px-4 py-2 text-slate-100 transition hover:border-amber-300/70 hover:text-amber-100 hover:shadow-[0_0_30px_rgba(251,191,36,0.2)]"
             >
               Explore capabilities
             </a>
-            <span className="text-[11px] text-slate-400/95">
+            <span className="text-[13px] text-slate-400/95">
               Bank-grade payments · Full-stack delivery · Enterprise governance
             </span>
           </div>
