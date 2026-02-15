@@ -19,12 +19,12 @@ export const metadata: Metadata = {
     template: "%s · The ANTH",
   },
   description:
-    "Delivering engineering innovation across a connected world – The ANTH (Ananse Ntentan Technology Hub) engineers bank-grade platforms, secure infrastructure, and resilient experiences for Africa and beyond.",
+    "Delivering engineering innovation across a connected world – The ANTH (Ananse Ntentan Technology Hub) engineers high-performance platforms, secure infrastructure, and resilient experiences for Africa and beyond.",
   metadataBase: new URL("https://theanth.io"),
   openGraph: {
     title: "The ANTH — Delivering engineering innovation across a connected world",
     description:
-      "Afro-futurist engineering hub specialising in bank-grade payments, full-stack platforms, and secure, governed delivery.",
+      "Afro-futurist engineering hub specialising in mission-critical platforms, full-stack systems, and secure, governed delivery.",
     url: "https://theanth.io",
     siteName: "The ANTH",
     type: "website",
@@ -34,12 +34,15 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "The ANTH — Ananse Ntentan Technology Hub",
     description:
-      "Delivering engineering innovation across a connected world with bank-grade platforms and resilient networks.",
+      "Delivering engineering innovation across a connected world with mission-critical platforms and resilient networks.",
   },
   keywords: [
     "The ANTH",
     "Ananse Ntentan Technology Hub",
     "Fintech Engineering Ghana",
+    "Healthcare Software Africa",
+    "Logistics Platform Engineering",
+    "Mission-Critical Systems",
     "Bank-grade Platforms",
     "Software Engineering Africa",
     "Financial Technology Infrastructure",

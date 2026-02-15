@@ -45,6 +45,10 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Layout primitives */
 .page-shell {
   min-height: 100vh;

@@ -92,7 +92,7 @@ export default async function Image() {
                         marginTop: '40px',
                     }}
                 >
-                    Engineering bank-grade platforms across a connected world.
+                    Engineering mission-critical platforms across a connected world.
                 </div>
             </div>
         ),
